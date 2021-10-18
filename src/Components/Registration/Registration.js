@@ -2,14 +2,23 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+// import useAuth from '../../Hooks/useAuth';
 
 
 const Registration = () => {
+    // const { user } = useAuth()
     const auth = getAuth();
-    const [userEmail, setUserEmail] = useState("")
-    const [userPassword, setUserPassword] = useState("")
+    const [userEmail, setUserEmail] = useState("");
+    const [userPassword, setUserPassword] = useState("");
+
+
     const handleRegistration = (e) => {
-        console.log(userEmail, userPassword)
+        // console.log(userEmail, userPassword)
+        createUserWithEmailAndPassword(auth, userEmail, userPassword)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
         e.preventDefault(userEmail, userPassword);
     }
 

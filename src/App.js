@@ -13,6 +13,9 @@ import Details from './Components/Details/Details';
 import Services from './Components/Services/Services';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Components/SignIn/PrivateRoute/PrivateRoute';
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
+
 
 function App() {
   return (
@@ -20,6 +23,7 @@ function App() {
 
       <AuthProvider>
         <Router>
+          <Header></Header>
           <Switch>
             <Route exact path="/">
               <Home></Home>
@@ -44,6 +48,7 @@ function App() {
               <NotPage></NotPage>
             </Route>
           </Switch>
+          <Footer></Footer>
         </Router>
       </AuthProvider>
 
