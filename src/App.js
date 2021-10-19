@@ -15,6 +15,7 @@ import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Components/SignIn/PrivateRoute/PrivateRoute';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
+import About from './Components/About/About';
 
 
 function App() {
@@ -34,6 +35,10 @@ function App() {
             <Route path="/services">
               <Services></Services>
             </Route>
+            <Route path="/about">
+              <About></About>
+            </Route>
+
             <Route path="/registration">
               <Registration></Registration>
             </Route>

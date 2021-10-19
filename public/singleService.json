@@ -1,0 +1,52 @@
+[
+	{
+		"id": 5345634,
+		"img": "https://i.ibb.co/sg9sRS9/young-attractive-female-dentist-treating-male-patient-her-office-181624-50871.jpg",
+		"name": "Cardiac clinic",
+		"jod": " Dentist",
+		"Experience": 7,
+		"Stady": "London"
+	},
+	{
+		"id": 754972,
+		"img": "https://i.ibb.co/8bNvDT0/beautiful-girl-dentist-1157-18577.jpg",
+		"name": "general dentistry",
+		"jod": " Dentist",
+		"Experience": 10,
+		"clinic": "International"
+	},
+	{
+		"id": 9847213,
+		"img": "https://i.ibb.co/SV38D8q/female-dentist-with-dentistry-tools-isolated-1303-13204.jpg",
+		"name": "Cosmetic dentistry",
+		"jod": " Dentist",
+		"Experience": 10,
+		"clinic": "International"
+	},
+	{
+		"id": 76523465,
+		"img": "https://i.ibb.co/gw7nMTj/happy-young-woman-smiling-23-2148396164.jpg",
+		"name": "Restorative DENTISTRY",
+		"jod": " Dentist",
+		"Experience": 10,
+		"clinic": "International"
+	},
+	{
+		"id": 237863,
+		
+		"img": "https://i.ibb.co/hL2LzVX/healthy-white-tooth-dentist-mirror-dental-clinic-136401-2526.jpg",
+		"name": "Md Arifur Rahman",
+		"jod": " Dentist",
+		"Experience": 10,
+		"clinic": "International"
+	},
+	{
+		"id": 12354312,
+		"img": "https://i.ibb.co/bHCgmbP/woman-patient-dentist-1303-9355.jpg",
+		"name": "Md Arifur Rahman",
+		"jod": " Dentist",
+		"Experience": 10,
+		"clinic": "International"
+	}
+]
+
