@@ -1,25 +1,73 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-// import useAuth from '../../Hooks/useAuth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendSignInLinkToEmail } from "firebase/auth";
+import useAuth from '../../Hooks/useAuth';
 
+
+// initializeAuthentication();
 
 const Registration = () => {
+    const { signInUsingGoogle } = useAuth();
     // const { user } = useAuth()
     const auth = getAuth();
     const [userEmail, setUserEmail] = useState("");
     const [userPassword, setUserPassword] = useState("");
+    const [error, setError] = useState("");
+    const [isLogin, setLogin] = useState(false);
 
 
     const handleRegistration = (e) => {
         // console.log(userEmail, userPassword)
-        createUserWithEmailAndPassword(auth, userEmail, userPassword)
-            .then(result => {
-                const user = result.user;
-                console.log(user)
-            })
-        e.preventDefault(userEmail, userPassword);
+        e.preventDefault();
+
+        const registerNewUser = (userEmail, userPassword) => {
+            createUserWithEmailAndPassword(auth, userEmail, userPassword)
+                .then(result => {
+                    const user = result.user;
+                    setError("");
+                    verifyEmail();
+                    console.log(user)
+                })
+                .catch(error => {
+                    setError(error.message)
+                })
+        }
+
+        const processLogin = (userEmail, userPassword) => {
+            signInWithEmailAndPassword(auth, userEmail, userPassword)
+                .then(result => {
+                    const user = result.user;
+                    setError("");
+                    console.log(user)
+                })
+                .catch(error => {
+                    setError(error.massage)
+                })
+        }
+
+        if (userPassword.length < 6) {
+            setError("Password must be 6 chracter")
+            return;
+        }
+        if (!/(?=.*[a-z].*[A-Z])/.test(userPassword)) {
+            setError("Must use 2 upper case");
+            return;
+        }
+        //     isLogin ? processLogin(userEmail, userPassword) : createNewUser(userEmail, userPassword);
+
+        // }
+        if (isLogin) {
+            processLogin(userEmail, userPassword)
+        }
+        else {
+            registerNewUser(userEmail, userPassword);
+        }
+
+
+
+
+
     }
 
     const handleEmailChange = e => {
@@ -30,9 +78,20 @@ const Registration = () => {
         setUserPassword(e.target.value)
     }
 
+    const toggleLogin = e => {
+        setLogin(e.target.checked)
+    }
+
+    const verifyEmail = () => {
+        sendSignInLinkToEmail(auth.currentUser)
+            .then(result => {
+                console.log(result)
+            })
+    }
+
     return (
         <div>
-            <h2 className="btn btn-success">Please register</h2>
+            <h2 className="btn btn-success">Please{isLogin ? "Login" : " register"}</h2>
             <Form onSubmit={handleRegistration}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -47,13 +106,16 @@ const Registration = () => {
                     <Form.Control onBlur={handlePassword} type="password" placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
+                    <Form.Check onChange={toggleLogin} type="checkbox" label="Registration" />
                 </Form.Group>
+                <h4 className="text-danger">{error}</h4>
                 <Button variant="primary" type="submit">
-                    Register
+                    {isLogin ? "Login" : "Register"}
                 </Button>
+                <br />
+                <button onClick={signInUsingGoogle} className="btn btn-success">google Sign in</button>
             </Form>
-            <Link to="/logIn">Already Register?</Link>
+            {/* <Link to="/logIn">Already Register?</Link> */}
         </div>
     );
 };

@@ -15,7 +15,10 @@ const Services = () => {
             <h1>Services {services.length}</h1>
             <div className="row">
                 {
-                    services.map(service => <SingleService service={service}></SingleService>)
+                    services.map(service => <SingleService
+                        service={service}
+                        key={service.id}
+                    ></SingleService>)
                 }
             </div>
         </div>
