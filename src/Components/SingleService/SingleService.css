@@ -1,3 +1,9 @@
 .card {
-    /* width: 100%; */
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(140, 242, 208, 0.364);
+}
+
+.card img {
+    /* width: 600px; */
 }

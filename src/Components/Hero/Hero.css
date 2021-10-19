@@ -1,3 +1,11 @@
 .hero-size {
     height: 500px;
 }
+
+.hero h1 {
+    color: aqua;
+}
+
+.hero p {
+    color: aqua;
+}

@@ -19,11 +19,9 @@ const Details = () => {
 
     return (
         <div className="row">
-            {/* <h2>This is details {serviceId}</h2>
-            <h3>Single {singleEmployee.name}</h3> */}
 
             <div>
-                <h3>Single {singleEmployee.name}</h3>
+                <h3>Single {singleEmployee?.name}</h3>
 
             </div>
             <div>
