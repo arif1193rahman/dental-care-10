@@ -43,7 +43,7 @@ const Footer = () => {
                         </div>
                         <div className="col-md-5">
                             <div className="left-container text-start">
-                                <h1>Best Trainer for All</h1>
+                                <h1>Best Dental Clinic</h1>
                                 <div className="icons-container d-flex text-center ">
                                     <div className="icon">
                                         <FontAwesomeIcon icon={faInstagramSquare} />
@@ -61,8 +61,7 @@ const Footer = () => {
                                 </div>
                                 <p className="mt-4 ">
                                     <small>
-                                        This is online tutor banner for online course <br />
-                                        Create free tutor flyers, posters, social media graphics and videos in minutes
+                                        We are here for your smile ...
                                     </small>
                                 </p>
 
@@ -77,7 +76,7 @@ const Footer = () => {
                                     <li className="footer-menu">Home</li>
                                     <li className="footer-menu">About</li>
                                     <li className="footer-menu">Service</li>
-                                    <li className="footer-menu">Sign In</li>
+
                                 </ul>
                             </div>
                         </div>

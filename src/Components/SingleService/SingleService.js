@@ -8,7 +8,7 @@ const SingleService = (props) => {
         <div className="col-lg-6 col-sm-12 card">
 
             <img src={img} alt="" />
-            <h2>Name {name}</h2>
+            <h2> {name}</h2>
             <h5>{details}</h5>
             <Link to={`/details/${id}`}>
                 <button className="btn btn-warning">Check</button>

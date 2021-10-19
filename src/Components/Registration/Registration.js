@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendSignInLinkToEmail } from "firebase/auth";
 import useAuth from '../../Hooks/useAuth';
 
 
-// initializeAuthentication();
 
 const Registration = () => {
     const { signInUsingGoogle } = useAuth();
-    // const { user } = useAuth()
     const auth = getAuth();
     const [userEmail, setUserEmail] = useState("");
     const [userPassword, setUserPassword] = useState("");
@@ -18,7 +15,6 @@ const Registration = () => {
 
 
     const handleRegistration = (e) => {
-        // console.log(userEmail, userPassword)
         e.preventDefault();
 
         const registerNewUser = (userEmail, userPassword) => {
@@ -54,7 +50,7 @@ const Registration = () => {
             setError("Must use 2 upper case");
             return;
         }
-        //     isLogin ? processLogin(userEmail, userPassword) : createNewUser(userEmail, userPassword);
+        // isLogin ? processLogin(userEmail, userPassword) : createNewUser(userEmail, userPassword);
 
         // }
         if (isLogin) {
@@ -63,10 +59,6 @@ const Registration = () => {
         else {
             registerNewUser(userEmail, userPassword);
         }
-
-
-
-
 
     }
 

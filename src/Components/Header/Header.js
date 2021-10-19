@@ -10,12 +10,13 @@ const Header = () => {
     return (
         <Navbar bg="dark" variant="dark" collapseOnSelect expand="lg">
             <Container>
-                <Navbar.Brand to="/home">Dental clinic</Navbar.Brand>
+                <Navbar.Brand to="/home" className="main-text">Dental clinic</Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-start nav-text">
                     <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
                     <Nav.Link as={HashLink} to="/services#service">Services</Nav.Link>
                     <Nav.Link as={HashLink} to="/about#about">About</Nav.Link>
+                    <Nav.Link as={HashLink} to="/schedule#schedule">Schedule</Nav.Link>
                     <Navbar.Collapse className="justify-content-end">
                         {user?.email ?
                             <Button onClick={logOut} variant="light">Log Out</Button>

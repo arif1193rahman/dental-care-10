@@ -1,3 +1,9 @@
 .nav-text {
-    font-weight: 500;
+    font-weight: 700;
+}
+
+.main-text {
+    font-size: 50px;
+    font-weight: 700;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
