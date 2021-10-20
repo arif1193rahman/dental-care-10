@@ -7,7 +7,6 @@ import {
   Route
 } from "react-router-dom";
 import Registration from './Components/Registration/Registration';
-import SignIn from './Components/SignIn/SignIn';
 import NotPage from './Components/NotPage/NotPage';
 import Details from './Components/Details/Details';
 import Services from './Components/Services/Services';

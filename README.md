@@ -7,7 +7,7 @@
 4. Footer(Contract us)
 5. About section have some info about us
 6. Google Sign in
-7. Sign in form 
+7. Sign in form email and password
 
 
 Link

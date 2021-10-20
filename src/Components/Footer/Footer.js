@@ -27,7 +27,9 @@ const Footer = () => {
                                         <FontAwesomeIcon icon={faPhoneVolume} />
                                     </div>
                                     <div>
-                                        <h5>+88017237658678</h5>
+                                        <h5>+8801723792475</h5>
+                                        <br />
+                                        <h5> <small>rahman1193arif@gmail.com</small> </h5>
                                     </div>
                                 </div>
                                 <div className="map d-flex align-items-center justify-content-center">
@@ -76,6 +78,7 @@ const Footer = () => {
                                     <li className="footer-menu">Home</li>
                                     <li className="footer-menu">About</li>
                                     <li className="footer-menu">Service</li>
+                                    <li className="footer-menu">Schedule</li>
 
                                 </ul>
                             </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendSignInLinkToEmail } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendSignInLinkToEmail, updateProfile } from "firebase/auth";
 import useAuth from '../../Hooks/useAuth';
 import './Registration.css';
 
@@ -9,10 +9,12 @@ import './Registration.css';
 const Registration = () => {
     const { signInUsingGoogle } = useAuth();
     const auth = getAuth();
+    const [name, setName] = useState("");
     const [userEmail, setUserEmail] = useState("");
     const [userPassword, setUserPassword] = useState("");
     const [error, setError] = useState("");
     const [isLogin, setLogin] = useState(false);
+
 
 
     const handleRegistration = (e) => {
@@ -23,6 +25,9 @@ const Registration = () => {
                 .then(result => {
                     const user = result.user;
                     setError("");
+                    setUserName();
+                    window.location.reload();
+
                     // verifyEmail();
                     console.log(user)
                 })
@@ -69,6 +74,15 @@ const Registration = () => {
     //             console.log(result)
     //         })
     // }
+    const setUserName = () => {
+        updateProfile(auth.currentUser, { displayName: name })
+            .then(result => { })
+    }
+
+
+    const handleNameChange = e => {
+        setName(e.target.value);
+    }
 
     const handleEmailChange = e => {
         setUserEmail(e.target.value)
@@ -89,6 +103,14 @@ const Registration = () => {
                 <div className="col-sm-12">
                     <h2 className="login-text">Please{isLogin ? "Login" : " register"}</h2>
                     <Form onSubmit={handleRegistration}>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+
+                            {!isLogin && <div>
+                                <Form.Label>Name</Form.Label>
+                                <Form.Control onBlur={handleNameChange} type="name" placeholder="Enter name" required />
+                            </div>}
+
+                        </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control onBlur={handleEmailChange} type="email" placeholder="Enter email" required />

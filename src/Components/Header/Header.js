@@ -23,14 +23,12 @@ const Header = () => {
                             : <Nav.Link as={Link} to="/registration"><i class="fas fa-sign-out-alt"></i> Log In</Nav.Link>}
                         <Nav.Link as={Link} to="/registration">Registration</Nav.Link>
                         <Navbar.Text className="display-name">
-                            Signed: <Link className="display-name" to="/logIn"> {user.displayName
-                            }</Link>
+                            Signed: <Link className="display-name" to="/logIn"> {user?.displayName}</Link>
                         </Navbar.Text>
                     </Navbar.Collapse>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
-
     );
 };
 

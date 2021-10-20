@@ -1,0 +1,13 @@
+.blog {
+    text-align: center;
+    padding: 30px;
+    background-color: aliceblue;
+}
+
+.blog-main {
+    text-align: center;
+    font-size: 60px;
+    color: rgb(151, 97, 25);
+    /* margin: 10px; */
+    padding-top: 20px;
+}
