@@ -11,6 +11,6 @@
 
 
 Link
-[visit Website](https://quirky-rosalind-790f80.netlify.app/home "LCO")
+[visit Website](https://dental-clinic-c8f73.web.app/home "LCO")
 
 >keep smiling and work harder
