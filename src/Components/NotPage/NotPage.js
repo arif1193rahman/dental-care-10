@@ -1,9 +1,10 @@
 import React from 'react';
+import img from '../../notfound.jpg'
 
 const NotPage = () => {
     return (
         <div>
-            <img src="https://i.ibb.co/pb614rQ/404-error-page-found-41910-364.jpg" alt="" />
+            <img style={{ width: "100%" }} src={img} alt="" />
 
         </div>
     );

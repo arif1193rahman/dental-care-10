@@ -13,17 +13,18 @@ const Header = () => {
                 <Navbar.Brand to="/home" className="main-text">Dental clinic</Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-start nav-text">
-                    <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
-                    <Nav.Link as={HashLink} to="/services#service">Services</Nav.Link>
+                    <Nav.Link as={HashLink} to="/home">Home</Nav.Link>
+                    <Nav.Link as={HashLink} to="/services">Services</Nav.Link>
                     <Nav.Link as={HashLink} to="/about#about">About</Nav.Link>
-                    <Nav.Link as={HashLink} to="/schedule#schedule">Schedule</Nav.Link>
+                    <Nav.Link as={HashLink} to="/schedule">Schedule</Nav.Link>
                     <Navbar.Collapse className="justify-content-end">
                         {user?.email ?
-                            <Button onClick={logOut} variant="light">Log Out</Button>
-                            : <Nav.Link as={Link} to="/registration">Log In</Nav.Link>}
+                            <Button onClick={logOut} variant="light"><i class="fas fa-sign-in-alt"></i> Log Out</Button>
+                            : <Nav.Link as={Link} to="/registration"><i class="fas fa-sign-out-alt"></i> Log In</Nav.Link>}
                         <Nav.Link as={Link} to="/registration">Registration</Nav.Link>
-                        <Navbar.Text>
-                            Signed in as: <Link to="/logIn">{user?.displayName}</Link>
+                        <Navbar.Text className="display-name">
+                            Signed: <Link className="display-name" to="/logIn"> {user.displayName
+                            }</Link>
                         </Navbar.Text>
                     </Navbar.Collapse>
                 </Navbar.Collapse>
