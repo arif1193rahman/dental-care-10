@@ -28,7 +28,6 @@ const Details = () => {
             <div className="col-lg-6 col-sm-12">
                 <img src={singleEmployee?.img} alt="" />
             </div>
-
         </div>
     );
 };
